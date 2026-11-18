@@ -2,6 +2,8 @@
 
 已编译的安装包：`星璃iPad-unsigned.ipa`（约 1.2 MB）。适用于 iPadOS 16 或更高版本。已经通过 Xcode 真实设备 arm64 编译和本地 IPA 结构检查，尚未在你的 iPad 上实测。
 
+[下载 IPA](https://github.com/z462628727-dot/haozhang/releases/download/v1.0.0-preview.1/Xingli-iPad-unsigned.ipa)（发布文件名为 `Xingli-iPad-unsigned.ipa`，与本地中文文件名版本内容相同）。下载无需登录 GPT 或 GitHub。
+
 ## 安装
 
 1. 在 Windows 电脑按 [AltStore Classic 官方 Windows 安装说明](https://faq.altstore.io/altstore-classic/how-to-install-altstore-windows)安装 AltServer，以及它要求的 Apple iTunes / iCloud 组件。下载入口以该官方说明为准。

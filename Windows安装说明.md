@@ -6,6 +6,10 @@
 
 [查看成功编译记录](https://github.com/z462628727-dot/haozhang/actions/runs/44230549848)。构建源码提交：`90f42711c00f7e4173bb07174b6b00085c21dc0a`。
 
+[下载已编译的 IPA](https://github.com/z462628727-dot/haozhang/releases/download/v1.0.0-preview.1/Xingli-iPad-unsigned.ipa) · [安装步骤](INSTALL.md)
+
+下载无需登录 ChatGPT 或 GitHub。下载链接已匿名请求验证返回 HTTP 200，且文件 SHA-256 与编译产物一致。
+
 ## Windows + iPad 的免费路线
 
 1. 把本工程放入你自己的 GitHub 仓库。使用公开仓库的标准 macOS Actions runner 可以免费编译；本仓库已按所有者授权公开源码和生成的角色图。不要上传聊天、API 密钥、Apple 密码或签名证书。
