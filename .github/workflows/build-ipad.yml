@@ -1,0 +1,22 @@
+name: Build iPad IPA
+'on':
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: macos-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Show selected Xcode
+        run: xcodebuild -version
+      - name: Build a real arm64 iPad application
+        run: bash scripts/build-ipa.sh
+      - name: Upload unsigned IPA for personal signing
+        uses: actions/upload-artifact@v4
+        with:
+          name: Xingli-unsigned-IPA
+          path: build/Xingli-unsigned.ipa
+          if-no-files-found: error
+          retention-days: 7
