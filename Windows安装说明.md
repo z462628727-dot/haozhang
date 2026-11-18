@@ -2,11 +2,13 @@
 
 本包包含原生 SwiftUI 应用代码、角色图片、Xcode 工程和免费云端编译流程。适用于 iPadOS 16 或更高版本。角色、离线预设互动、聊天记录、朗读和专注计时均在 App 内实现，不通过网站加载角色，不需要 ChatGPT 或 Render 账号。
 
-**当前文件包还不是可直接安装的 IPA。当前 Windows 环境没有 Apple 的 iOS 编译工具，尚未完成 Xcode 编译、Apple 签名或实体 iPad 测试。**
+**2026-11-18 已通过 GitHub Actions 的 macOS / Xcode 设备编译并生成真实 arm64 IPA，已检查安装包结构。IPA 尚未 Apple 签名，仍需个人签名后安装；尚未进行实体 iPad 测试。**
+
+[查看成功编译记录](https://github.com/z462628727-dot/haozhang/actions/runs/44230549848)。构建源码提交：`90f42711c00f7e4173bb07174b6b00085c21dc0a`。
 
 ## Windows + iPad 的免费路线
 
-1. 把本工程放入你自己的 GitHub 仓库。使用公开仓库的标准 macOS Actions runner 可以免费编译；公开源码和角色图之前需要你的明确同意。不要上传聊天、API 密钥、Apple 密码或签名证书。
+1. 把本工程放入你自己的 GitHub 仓库。使用公开仓库的标准 macOS Actions runner 可以免费编译；本仓库已按所有者授权公开源码和生成的角色图。不要上传聊天、API 密钥、Apple 密码或签名证书。
 2. 在仓库「Actions」中打开「Build iPad IPA」，点击「Run workflow」。流程会用 Xcode 编译面向真实设备的 arm64 应用，随后生成 `Xingli-unsigned.ipa`。
 3. 成功后从该次运行的 Artifacts 下载 `Xingli-unsigned-IPA`，解压下载文件，取出 `.ipa`。
 4. 在 Windows 上按 AltStore 官方说明安装 AltServer / AltStore Classic。连接并信任自己的 iPad，在你自己的电脑和官方工具中输入 Apple 账号完成个人签名。

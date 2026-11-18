@@ -1,0 +1,32 @@
+name: Publish verified iPad preview
+'on':
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/publish-preview.yml'
+permissions:
+  contents: write
+  actions: read
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download the successful device build
+        uses: actions/download-artifact@v4
+        with:
+          name: Xingli-unsigned-IPA
+          path: build
+          run-id: 44230549848
+          github-token: ${{ github.token }}
+      - name: Verify and publish the unsigned preview
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          printf '%s  %s\n' '54eec8d1ddaa1d47de524f63cef9f60c7f46c9c7dbf9a006500614acc1b39370' 'build/Xingli-unsigned.ipa' | sha256sum --check
+          mv build/Xingli-unsigned.ipa build/Xingli-iPad-unsigned.ipa
+          gh release create v1.0.0-preview.1 build/Xingli-iPad-unsigned.ipa \
+            --target 90f42711c00f7e4173bb07174b6b00085c21dc0a \
+            --title '星璃陪伴 iPad 原生预览版 1.0' \
+            --prerelease --notes-file RELEASE_NOTES.md
